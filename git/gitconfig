@@ -1,0 +1,34 @@
+[core]
+	editor = vim
+  eol = lf
+  autocrlf = input
+  safecrlf = true
+  attributesfile = ~/.gitattributes
+
+[color]
+  ui = auto
+
+[gpg]
+  program = gpg
+
+[init]
+	defaultbranch = master
+
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
+
+[tag]
+  gpgsign = true
+
+[pull]
+	ff = only
+
+[push]
+	autosetupremote = true
+
+[advice]
+	addEmptyPathspec = false
+
+[include]
+	path = /Users/martontorner/.gitconfig.user

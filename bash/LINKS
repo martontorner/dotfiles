@@ -1,0 +1,2 @@
+$DOTFILES/bash/bash_profile.bash=$HOME/.bash_profile
+$DOTFILES/bash/bashrc.bash=$HOME/.bashrc
