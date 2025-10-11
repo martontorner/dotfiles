@@ -35,10 +35,10 @@ find "$DOTFILES" -type f -name LINKS | while read -r links_file; do
     # Create parent directory if it doesn't exist
     mkdir -p "$(dirname "${dest}")"
 
-    # Remove existing file or symlink if present
-    [[ -e "${tgt}" || -L "${tgt}" ]] && mv "${tgt}" "${tgt}.bak" && echo "Backed up existing ${tgt} to ${tgt}.bak"
+    # Backup existing file if present
+    [[ -e "${tgt}" && ! -L "${tgt}" ]] && mv "${tgt}" "${tgt}.bak" && echo "Backed up existing ${tgt} to ${tgt}.bak"
 
     # Create the symlink
-    ln -s "${src}" "${tgt}"
+    ln -fs "${src}" "${tgt}"
   done < "$links_file"
 done
