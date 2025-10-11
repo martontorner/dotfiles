@@ -43,4 +43,13 @@ git config --global user.signingkey "$GIT_USER_SIGNINGKEY"
 ### GIT ###
 ```
 
+## Development
+
+### Prepare
+
+Prepare local development environment:
+```shell
+make prepare
+```
+
 [dotfiles]: https://dotfiles.github.io
