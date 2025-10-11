@@ -198,5 +198,5 @@
   "dotfiles.repository": "tornermarton/toolkit",
   "dotfiles.targetPath": "~/toolkit",
   "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
-  "window.restoreWindows": "none",
+  "window.restoreWindows": "none"
 }
