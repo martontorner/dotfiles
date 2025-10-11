@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+  editor = vim
   eol = lf
   autocrlf = input
   safecrlf = true
@@ -12,7 +12,7 @@
   program = gpg
 
 [init]
-	defaultbranch = master
+  defaultbranch = master
 
 [commit]
   gpgsign = true
@@ -22,16 +22,16 @@
   gpgsign = true
 
 [pull]
-	ff = only
+  ff = only
 
 [push]
-	autosetupremote = true
+  autosetupremote = true
 
 [alias]
   unstage = reset
 
 [advice]
-	addEmptyPathspec = false
+  addEmptyPathspec = false
 
 [include]
-	path = /Users/martontorner/.gitconfig.user
+  path = /Users/martontorner/.gitconfig.user
