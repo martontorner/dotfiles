@@ -18,7 +18,8 @@ DOTFILES="$(get_dotfiles_directory)"
 # Setup path
 echo "export DOTFILES=${DOTFILES}" > "${HOME}/.path"
 
-# Create required files if not exist
+# Create extra configuration files if not exist
+touch "${HOME}/.hushlogin"
 touch "${HOME}/.extra"
 touch "${HOME}/.gitconfig.user"
 
