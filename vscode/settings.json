@@ -1,0 +1,202 @@
+{
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.activityBar.location": "top",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.confirmDelete": false,
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".gitconfig": ".gitignore, .gitmessage, .gitattributes",
+    ".editorconfig": ".*.yaml, *.config.js, *.config.ts",
+    ".env": "*.env, env.*",
+    "*.ts": "${capture}.js, ${capture}.spec.ts",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock, .nvmrc, .npmrc",
+    "tsconfig.json": "tsconfig.*.json",
+    "vitest.config.ts": "vitest.*.ts",
+    "*.go": "${capture}.go, ${capture}_test.go",
+    "go.mod": "go.sum",
+    "README.md": "CHANGELOG.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, LICENSE, LICENSE.md, SECURITY.md"
+  },
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
+  "workbench.colorCustomizations": {
+    "editorInlayHint.foreground": "#787878",
+    "editorInlayHint.background": "#313235",
+    "editorInlayHint.typeForeground": "#787878",
+    "editorInlayHint.typeBackground": "#313235",
+    "editorInlayHint.parameterForeground": "#787878",
+    "editorInlayHint.parameterBackground": "#313235",
+  },
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.inlayHints.fontFamily": "BlinkMacSystemFont, Segoe UI",
+  "editor.inlayHints.fontSize": 11,
+  "editor.inlayHints.padding": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.maximumLength": 50,
+  "editor.lineNumbers": "relative",
+  "editor.lineHeight": 1.7,
+  "editor.tabSize": 2,
+  "editor.autoClosingQuotes": "always",
+  "editor.fontLigatures": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.foldingImportsByDefault": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#393E43"
+    },
+    120,
+  ],
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "variable.language",
+          "constant.language",
+          "support.type.builtin",
+          "support.type.primitive"
+        ],
+        "settings": {
+          "foreground": "#F47067"
+        }
+      },
+      {
+        "scope": [
+          "support.class",
+          "support.type",
+          "support.variable"
+        ],
+        "settings": {
+          "foreground": "#f69d50"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.type.parameter"
+        ],
+        "settings": {
+          "foreground": "#4CAF50",
+        }
+      },
+      {
+        "scope": [
+          "variable.parameter",
+          "variable.other.constant",
+          "variable.other.readwrite"
+        ],
+        "settings": {
+          "foreground": "#adbac7"
+        }
+      },
+      {
+        "scope": [
+          "variable.other",
+          "variable.other.constant.property",
+          "keyword.operator.arithmetic",
+        ],
+        "settings": {
+          "foreground": "#6cb6ff"
+        }
+      },
+    ]
+  },
+  "files.enableTrash": false,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onWindowChange",
+  "files.associations": {
+    "*.conf.tmpl": "nginx"
+  },
+  "material-icon-theme.folders.theme": "classic",
+  "prettier.requireConfig": true,
+  "redhat.telemetry.enabled": false,
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert",
+  "javascript.preferGoToSourceDefinition": true,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
+  "typescript.preferGoToSourceDefinition": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "template-string-converter.convertOutermostQuotes": true,
+  "vitest.maximumConfigs": 10,
+  "javascriptBooster.logLevel": "error",
+  "importCost.fontStyle": "oblique",
+  "importCost.largePackageDarkColor": "#92433D",
+  "importCost.largePackageLightColor": "#92433D",
+  "importCost.smallPackageDarkColor": "#307435",
+  "importCost.smallPackageLightColor": "#307435",
+  "importCost.mediumPackageDarkColor": "#A56E1A",
+  "importCost.mediumPackageLightColor": "#A56E1A",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "cSpell.userWords": [
+    "cloudsmith",
+    "devcontainers",
+    "distro",
+    "goreleaser",
+    "gotmpl",
+    "mkdocs",
+    "tornermarton"
+  ],
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "go-template.languages": [
+    "nginx"
+  ],
+  // "[nginx]": {
+  //   "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+  // },
+  "chat.editing.confirmEditRequestRetry": false,
+  "workbench.editor.empty.hint": "hidden",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "workbench.navigationControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "dotfiles.repository": "tornermarton/toolkit",
+  "dotfiles.targetPath": "~/toolkit",
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "window.restoreWindows": "none",
+}
