@@ -27,6 +27,9 @@
 [push]
 	autosetupremote = true
 
+[alias]
+  unstage = reset
+
 [advice]
 	addEmptyPathspec = false
 
