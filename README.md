@@ -1,4 +1,4 @@
-# .dotfiles
+# dotfiles
 
 My [dotfiles] repository.
 
@@ -47,7 +47,6 @@ GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
 git config --file "${GIT_USER_CONFIG_FILE}" user.name "${GIT_USER_NAME}"
 git config --file "${GIT_USER_CONFIG_FILE}" user.email "${GIT_USER_EMAIL}"
 git config --file "${GIT_USER_CONFIG_FILE}" user.signingkey "${GIT_USER_SIGNINGKEY}"
-git config --global include.path "${GIT_USER_CONFIG_FILE}"
 ### GIT ###
 ```
 
