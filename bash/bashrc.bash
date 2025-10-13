@@ -15,5 +15,9 @@ _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 _source_if_exists "${DOTFILES}/bash/_/completions.sh"
 _source_if_exists "${DOTFILES}/bash/_/prompts.sh"
 
+# Plugins
+# TODO: can we move this to an external file?
+_source_if_exists "${HOMEBREW_ROOT}/opt/nvm/nvm.sh"
+
 # Overrides
 _source_if_exists "${HOME}/.extra"

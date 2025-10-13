@@ -29,6 +29,7 @@ _source_if_exists "${DOTFILES}/zsh/_/prompts.sh"
 
 # Plugins
 # TODO: can we move this to an external file?
+_source_if_exists "${HOMEBREW_ROOT}/opt/nvm/nvm.sh"
 _source_if_exists "${HOMEBREW_ROOT}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 _source_if_exists "${HOMEBREW_ROOT}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
