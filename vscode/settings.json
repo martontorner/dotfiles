@@ -1,29 +1,9 @@
 {
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.pinnedTabSizing": "compact",
-  "workbench.activityBar.location": "top",
+  "zenMode.restore": false,
+  "window.restoreWindows": "none",
   "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "top",
   "workbench.iconTheme": "material-icon-theme",
-  "explorer.confirmDelete": false,
-  "explorer.confirmPasteNative": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": false,
-  "explorer.fileNesting.patterns": {
-    ".gitconfig": ".gitignore, .gitmessage, .gitattributes",
-    ".editorconfig": ".*.yaml, *.config.js, *.config.ts",
-    ".env": "*.env, env.*",
-    "*.ts": "${capture}.js, ${capture}.spec.ts",
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.jsx": "${capture}.js",
-    "*.tsx": "${capture}.ts",
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock, .nvmrc, .npmrc",
-    "tsconfig.json": "tsconfig.*.json",
-    "vitest.config.ts": "vitest.*.ts",
-    "*.go": "${capture}.go, ${capture}_test.go",
-    "go.mod": "go.sum",
-    "README.md": "CHANGELOG.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, LICENSE, LICENSE.md, SECURITY.md"
-  },
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
@@ -33,9 +13,14 @@
     "editorInlayHint.typeForeground": "#787878",
     "editorInlayHint.typeBackground": "#313235",
     "editorInlayHint.parameterForeground": "#787878",
-    "editorInlayHint.parameterBackground": "#313235",
+    "editorInlayHint.parameterBackground": "#313235"
   },
+  "workbench.navigationControl.enabled": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.empty.hint": "hidden",
   "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 12,
   "editor.inlayHints.fontFamily": "BlinkMacSystemFont, Segoe UI",
   "editor.inlayHints.fontSize": 11,
   "editor.inlayHints.padding": true,
@@ -58,7 +43,7 @@
       "column": 80,
       "color": "#393E43"
     },
-    120,
+    120
   ],
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -88,7 +73,7 @@
           "entity.name.type.parameter"
         ],
         "settings": {
-          "foreground": "#4CAF50",
+          "foreground": "#4CAF50"
         }
       },
       {
@@ -105,25 +90,49 @@
         "scope": [
           "variable.other",
           "variable.other.constant.property",
-          "keyword.operator.arithmetic",
+          "keyword.operator.arithmetic"
         ],
         "settings": {
           "foreground": "#6cb6ff"
         }
-      },
+      }
     ]
   },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".gitconfig": ".gitignore, .gitmessage, .gitattributes",
+    ".editorconfig": ".*.yaml, *.config.js, *.config.ts",
+    ".env": "*.env, env.*",
+    "*.ts": "${capture}.js, ${capture}.spec.ts",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock, .nvmrc, .npmrc",
+    "tsconfig.json": "tsconfig.*.json",
+    "vitest.config.ts": "vitest.*.ts",
+    "*.go": "${capture}.go, ${capture}_test.go",
+    "go.mod": "go.sum",
+    "README.md": "CHANGELOG.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, LICENSE, LICENSE.md, SECURITY.md"
+  },
+  "explorer.confirmDelete": false,
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDragAndDrop": false,
   "files.enableTrash": false,
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onWindowChange",
   "files.associations": {
     "*.conf.tmpl": "nginx"
   },
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "terminal.integrated.fontSize": 12,
+  "remote.autoForwardPortsSource": "hybrid",
+  "dotfiles.repository": "martontorner/dotfiles",
+  "dotfiles.targetPath": "~/.dotfiles",
   "material-icon-theme.folders.theme": "classic",
   "prettier.requireConfig": true,
   "redhat.telemetry.enabled": false,
   "javascript.format.semicolons": "insert",
-  "typescript.format.semicolons": "insert",
   "javascript.preferGoToSourceDefinition": true,
   "javascript.referencesCodeLens.enabled": true,
   "javascript.referencesCodeLens.showOnAllFunctions": true,
@@ -133,6 +142,7 @@
   "javascript.inlayHints.parameterTypes.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.format.semicolons": "insert",
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.parameterNames.enabled": "literals",
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
@@ -144,6 +154,7 @@
   "typescript.preferGoToSourceDefinition": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "template-string-converter.convertOutermostQuotes": true,
   "vitest.maximumConfigs": 10,
   "javascriptBooster.logLevel": "error",
@@ -156,6 +167,8 @@
   "importCost.mediumPackageLightColor": "#A56E1A",
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.fixes": true,
+  "chat.editing.confirmEditRequestRetry": false,
+  "chat.commandCenter.enabled": false,
   "cSpell.userWords": [
     "cloudsmith",
     "devcontainers",
@@ -163,7 +176,21 @@
     "goreleaser",
     "gotmpl",
     "mkdocs",
-    "tornermarton"
+    "tornermarton",
+    "martontorner"
+  ],
+  "go-template.languages": [
+    "nginx"
+  ],
+  "stylelint.snippet": [
+    "css",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "scss"
   ],
   "[go]": {
     "editor.defaultFormatter": "golang.go"
@@ -171,14 +198,12 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "go-template.languages": [
-    "nginx"
-  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
   // "[nginx]": {
   //   "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
   // },
-  "chat.editing.confirmEditRequestRetry": false,
-  "workbench.editor.empty.hint": "hidden",
   "[dockercompose]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -192,11 +217,5 @@
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "workbench.navigationControl.enabled": false,
-  "chat.commandCenter.enabled": false,
-  "dotfiles.repository": "tornermarton/toolkit",
-  "dotfiles.targetPath": "~/toolkit",
-  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
-  "window.restoreWindows": "none"
+  }
 }
