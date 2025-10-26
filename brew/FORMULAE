@@ -5,6 +5,7 @@ docker-completion
 git
 gnupg
 helm
+helmfile
 jq
 nvm
 pinentry-mac
