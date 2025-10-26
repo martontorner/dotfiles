@@ -1,5 +1,6 @@
 [[ -x "$(command -v docker)" ]] && source <(docker completion bash)
 [[ -x "$(command -v kubectl)" ]] && source <(kubectl completion bash)
+[[ -x "$(command -v helm)" ]] && source <(helm completion bash)
 
 [[ -s "${NVM_DIR}/bash_completion" ]] && source "${NVM_DIR}/bash_completion"
 
