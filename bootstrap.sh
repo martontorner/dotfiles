@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-function get_dotfiles_directory() {
+get_dotfiles_directory () {
   local source="${BASH_SOURCE[0]:-$0}"
 
   while [ -L "$source" ]; do

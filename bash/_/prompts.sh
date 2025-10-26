@@ -20,7 +20,7 @@ __unset_options () {
 
 source "${DOTFILES}/shell/_/prompts.sh"
 
-function _update_history() {
+_update_history () {
   history -a
 
   # temporary file for cleaned history
