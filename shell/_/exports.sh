@@ -36,3 +36,8 @@ export NVM_DIR="${HOME}/.nvm"
 # Python
 export PYENV_ROOT="${HOME}/.pyenv"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Docker BuildKit
+export BUILDX_GIT_CHECK_DIRTY=1
+export BUILDX_GIT_INFO=1
+export BUILDX_GIT_LABELS=full
