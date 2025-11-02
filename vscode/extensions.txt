@@ -9,6 +9,7 @@ bradlc.vscode-tailwindcss
 christian-kohler.npm-intellisense
 connor4312.esbuild-problem-matchers
 dbaeumer.vscode-eslint
+docker.docker
 eamodio.gitlens
 ecmel.vscode-html-css
 editorconfig.editorconfig
@@ -23,6 +24,7 @@ github.github-vscode-theme
 golang.go
 gruntfuggly.todo-tree
 hansuxdev.bootstrap5-snippets
+hashicorp.hcl
 ivory-lab.jenkinsfile-support
 jasonlhy.hungry-delete
 jinliming2.vscode-go-template

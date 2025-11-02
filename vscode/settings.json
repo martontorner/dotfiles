@@ -130,6 +130,10 @@
   "dotfiles.repository": "martontorner/dotfiles",
   "dotfiles.targetPath": "~/.dotfiles",
   "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.files.associations": {
+    "Chart.yaml": "helm",
+    "helmfile.yaml": "helm"
+  },
   "prettier.requireConfig": true,
   "redhat.telemetry.enabled": false,
   "javascript.format.semicolons": "insert",

@@ -7,5 +7,8 @@ help: ## This help.
 prepare:  ## Prepare the development environment.
 	@git config --local include.path ../.gitconfig
 
-install-vscode-extensions:  ## Install the VS Code extensions.
+export-vscode-extensions:  ## Export VS Code extensions.
+	@code --list-extensions | sort > vscode/extensions.txt
+
+import-vscode-extensions:  ## Import VS Code extensions.
 	@xargs -n 1 code --install-extension < vscode/extensions.txt
