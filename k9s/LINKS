@@ -1,0 +1,3 @@
+$DOTFILES/k9s/skins/transparent.yaml=$HOME/.config/k9s/skins/transparent.yaml
+$DOTFILES/k9s/aliases.yaml=$HOME/.config/k9s/aliases.yaml
+$DOTFILES/k9s/config.yaml=$HOME/.config/k9s/config.yaml
