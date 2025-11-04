@@ -29,6 +29,9 @@ _update_history () {
   # state variable for Bash #<epoch> lines
   bash_epoch=""
 
+  # ensure history file exists
+  [[ -f "$HISTFILE" ]] || touch "$HISTFILE"
+
   # read the mixed file line by line
   while IFS= read -r line; do
     if [[ "$line" =~ ^#([0-9]+)$ ]]; then
