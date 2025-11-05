@@ -196,6 +196,9 @@
     "postcss",
     "scss"
   ],
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "enabled"
+  },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
