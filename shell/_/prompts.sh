@@ -281,11 +281,12 @@ _create_prompt_line () {
 }
 
 _update_prompt () {
+  local exit_code=$?
   local line=""
 
   __set_options
 
-  line="${line}$(_create_status_line $?)"
+  line="${line}$(_create_status_line ${exit_code})"
   line="${line}\n"
   line="${line}$(_create_prompt_line)"
 

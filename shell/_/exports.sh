@@ -29,6 +29,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Homebrew
 export HOMEBREW_ROOT="/opt/homebrew"
+export HOMEBREW_NO_ENV_HINTS=1
 
 # Node
 export NVM_DIR="${HOME}/.nvm"

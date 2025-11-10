@@ -1,5 +1,7 @@
 azure-cli
 bash-completion@2
+bat
+bat-extras
 coreutils
 cosign
 derailed/k9s/k9s

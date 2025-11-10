@@ -55,4 +55,4 @@ _update_history () {
   mv "$TMP_FILE" "$HISTFILE"
 }
 
-PROMPT_COMMAND="_update_history; _update_prompt"
+PROMPT_COMMAND="_update_prompt; _update_history"

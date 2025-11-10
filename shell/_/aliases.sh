@@ -8,6 +8,12 @@ alias tree='tree -C --dirsfirst'
 
 alias h='history_pretty | tail'
 
+if batcat > /dev/null 2>&1; then
+  alias bat="batcat --paging=never"
+else
+  alias bat="bat --paging=never"
+fi
+
 alias t='tmux'
 alias tls='tmux list-sessions'
 alias tsn='tmux new-session \; set -g base-index 1 \; setw -g pane-base-index 1 \; set-option -g renumber-windows on'
@@ -78,8 +84,7 @@ alias dln='d network ls'
 alias dlg='d logs'
 alias dxc='d exec -i -t'
 
-if docker compose version > /dev/null 2>&1;
-then
+if docker compose version > /dev/null 2>&1; then
   alias c='docker compose'
 else
   # fallback to old docker-compose
