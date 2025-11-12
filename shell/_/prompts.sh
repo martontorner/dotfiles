@@ -185,7 +185,7 @@ _tool_status () {
 
   local node_version=$(node -v 2> /dev/null)
 
-  local go_version=$(go version 2> /dev/null | awk '{print $3}')
+  local go_version=$(go version 2>/dev/null | cut -d' ' -f3)
 
   if [ "$python3_version" ]; then
     has_version=1

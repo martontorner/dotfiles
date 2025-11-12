@@ -8,7 +8,7 @@ alias tree='tree -C --dirsfirst'
 
 alias h='history_pretty | tail'
 
-if batcat > /dev/null 2>&1; then
+if command -v batcat > /dev/null 2>&1; then
   alias bat="batcat --paging=never"
 else
   alias bat="bat --paging=never"
