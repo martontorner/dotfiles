@@ -176,62 +176,59 @@ _kube_status () {
 }
 
 _tool_status () {
-  local line=""
+  local line="" has_version=0
 
-  local has_version=0
-
-  local python3_version=$(python3 -V 2> /dev/null)
-  local python_version=$(python -V 2> /dev/null)
-
-  local node_version=$(node -v 2> /dev/null)
-
-  local go_version=$(go version 2>/dev/null | cut -d' ' -f3)
-
-  if [ "$python3_version" ]; then
+  if command -v python3 >/dev/null 2>&1; then
     has_version=1
+
+    local version=$(python3 -V 2>/dev/null)
 
     line="${line}$(__with_color "0;38;5;75;48;5;236")"
     line="${line}$(__with_print " ")"
     line="${line}$(__with_color "0;38;5;247;48;5;236")"
-    line="${line}$(__with_print " ${python3_version/Python /} ")"
-  elif [ "$python_version" ]; then
+    line="${line}$(__with_print " ${version/Python /} ")"
+  elif command -v python >/dev/null 2>&1; then
     has_version=1
+
+    local version=$(python -V 2>/dev/null)
 
     line="${line}$(__with_color "0;38;5;75;48;5;236")"
     line="${line}$(__with_print " ")"
     line="${line}$(__with_color "0;38;5;247;48;5;236")"
-    line="${line}$(__with_print " ${python_version/Python /} ")"
+    line="${line}$(__with_print " ${version/Python /} ")"
   fi
 
-  if [ "$node_version" ]; then
-    if [ $has_version ]; then
+  if command -v node >/dev/null 2>&1; then
+    if [ $has_version -eq 1 ]; then
       line="${line}$(__with_color "0;38;5;247;48;5;236")"
       line="${line}$(__with_print "")"
     fi
-
     has_version=1
+
+    local version=$(node -v 2>/dev/null)
 
     line="${line}$(__with_color "0;38;5;2;48;5;236")"
     line="${line}$(__with_print " ")"
     line="${line}$(__with_color "0;38;5;247;48;5;236")"
-    line="${line}$(__with_print " ${node_version/v/} ")"
+    line="${line}$(__with_print " ${version/v/} ")"
   fi
 
-  if [ "$go_version" ]; then
-    if [ $has_version ]; then
+  if command -v go >/dev/null 2>&1; then
+    if [ $has_version -eq 1 ]; then
       line="${line}$(__with_color "0;38;5;247;48;5;236")"
       line="${line}$(__with_print "")"
     fi
-
     has_version=1
+
+    local version=$(go version 2>/dev/null | cut -d' ' -f3)
 
     line="${line}$(__with_color "0;38;5;39;48;5;236")"
     line="${line}$(__with_print " 󰟓 ")"
     line="${line}$(__with_color "0;38;5;247;48;5;236")"
-    line="${line}$(__with_print " ${go_version/go/} ")"
+    line="${line}$(__with_print " ${version/go/} ")"
   fi
 
-  if [ $has_version ]; then
+  if [ $has_version -eq 1 ]; then
     line="$(__with_print "")${line}"
     line="$(__with_color "0;38;5;236;48;5;240;22")${line}"
 
