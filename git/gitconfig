@@ -34,4 +34,4 @@
   addEmptyPathspec = false
 
 [include]
-  path = /Users/martontorner/.gitconfig.user
+  path = ~/.gitconfig.user
