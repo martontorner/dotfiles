@@ -60,8 +60,7 @@ streetsidesoftware.code-spell-checker
 stylelint.vscode-stylelint
 tomwhite007.rename-angular-component
 undefined_publisher.angular-cli-schematics
-visualstudioexptteam.intellicode-api-usage-examples
-visualstudioexptteam.vscodeintellicode
+unifiedjs.vscode-mdx
 vitest.explorer
 wix.vscode-import-cost
 zignd.html-css-class-completion

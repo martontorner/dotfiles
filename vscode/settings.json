@@ -102,7 +102,7 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     ".gitconfig": ".gitignore, .gitmessage, .gitattributes",
-    ".editorconfig": ".*.yaml, *.config.js, *.config.ts",
+    ".editorconfig": ".*.yaml, *.config.js, *.config.cjs, *.config.mjs, *.config.ts",
     ".env": "*.env, env.*",
     "*.ts": "${capture}.js, ${capture}.spec.ts",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
