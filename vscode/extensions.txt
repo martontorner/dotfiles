@@ -2,6 +2,7 @@ aaron-bond.better-comments
 ahmadalli.vscode-nginx-conf
 alefragnani.bookmarks
 angular.ng-template
+asciidoctor.asciidoctor-vscode
 bierner.markdown-checkbox
 bierner.markdown-emoji
 bierner.markdown-preview-github-styles
@@ -63,4 +64,5 @@ undefined_publisher.angular-cli-schematics
 unifiedjs.vscode-mdx
 vitest.explorer
 wix.vscode-import-cost
+yoavbls.pretty-ts-errors
 zignd.html-css-class-completion
