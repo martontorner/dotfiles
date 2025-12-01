@@ -64,5 +64,6 @@ undefined_publisher.angular-cli-schematics
 unifiedjs.vscode-mdx
 vitest.explorer
 wix.vscode-import-cost
+xyc.vscode-mdx-preview
 yoavbls.pretty-ts-errors
 zignd.html-css-class-completion

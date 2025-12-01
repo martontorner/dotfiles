@@ -132,7 +132,9 @@
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.files.associations": {
     "Chart.yaml": "helm",
-    "helmfile.yaml": "helm"
+    "helmfile.yaml": "helm",
+    "conventional-changelog.config.js": "changelog",
+    "typedoc.config.js": "bibliography"
   },
   "prettier.requireConfig": true,
   "redhat.telemetry.enabled": false,
