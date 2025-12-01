@@ -4,6 +4,7 @@ autoload -U zmv
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 autoload -U compinit && compinit
+autoload -U bashcompinit && bashcompinit
 
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt inc_append_history     # add commands to HISTFILE in order of execution
@@ -22,9 +23,8 @@ _source_if_exists "${DOTFILES}/shell/_/functions.sh"
 _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 
 # Specific
-_source_if_exists "${DOTFILES}/zsh/_/fpaths.sh"
-_source_if_exists "${DOTFILES}/zsh/_/plugins.sh"
 _source_if_exists "${DOTFILES}/zsh/_/completions.sh"
+_source_if_exists "${DOTFILES}/zsh/_/fpaths.sh"
 _source_if_exists "${DOTFILES}/zsh/_/prompts.sh"
 
 # Plugins

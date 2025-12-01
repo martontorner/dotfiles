@@ -1,8 +1,6 @@
-[[ -x "$(command -v docker)" ]] && source <(docker completion bash)
-[[ -x "$(command -v kubectl)" ]] && source <(kubectl completion bash)
-[[ -x "$(command -v helm)" ]] && source <(helm completion bash)
-
-[[ -s "${NVM_DIR}/bash_completion" ]] && source "${NVM_DIR}/bash_completion"
+for f in "${HOME}/.bash_completions/*"; do
+  [[ -r "$f" ]] && source "$f"
+done
 
 _cd_repo() {
   COMPREPLY=( $(compgen -f -W "$(ls -1 ~/git)" -- "${COMP_WORDS[COMP_CWORD]}") )
