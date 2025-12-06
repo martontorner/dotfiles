@@ -57,18 +57,16 @@ done
 
 # Setup completions for bash
 mkdir -p "${HOME}/.bash_completions"
-[[ -x "$(command -v docker)" ]] && docker completion bash > "${HOME}/.bash_completions/docker"
-[[ -x "$(command -v kubectl)" ]] && kubectl completion bash > "${HOME}/.bash_completions/kubectl"
-[[ -x "$(command -v helm)" ]] && helm completion bash > "${HOME}/.bash_completions/helm"
-[[ -s "${HOME}/.nvm/bash_completion" ]] && cp "${HOME}/.nvm/bash_completion" "${HOME}/.bash_completions/nvm"
-[[ -x "$(command -v npm)" ]] && npm completion > "${HOME}/.bash_completions/npm"
+command -v docker >/dev/null 2>&1 && docker completion bash > "${HOME}/.bash_completions/docker"
+command -v kubectl >/dev/null 2>&1 && kubectl completion bash > "${HOME}/.bash_completions/kubectl"
+command -v helm >/dev/null 2>&1 && helm completion bash > "${HOME}/.bash_completions/helm"
+[ -s "${HOME}/.nvm/bash_completion" ] && cp "${HOME}/.nvm/bash_completion" "${HOME}/.bash_completions/nvm"
+command -v npm >/dev/null 2>&1 && npm completion > "${HOME}/.bash_completions/npm"
 
 # Setup completions for zsh
 mkdir -p "${HOME}/.zsh_completions"
-[[ -x "$(command -v docker)" ]] && docker completion zsh > "${HOME}/.zsh_completions/docker"
-[[ -x "$(command -v kubectl)" ]] && kubectl completion zsh > "${HOME}/.zsh_completions/kubectl"
-[[ -x "$(command -v helm)" ]] && helm completion zsh > "${HOME}/.zsh_completions/helm"
-[[ -s "${HOME}/.nvm/bash_completion" ]] && cp "${HOME}/.nvm/bash_completion" "${HOME}/.zsh_completions/nvm"
-[[ -x "$(command -v npm)" ]] && npm completion > "${HOME}/.zsh_completions/npm"
-
-
+command -v docker >/dev/null 2>&1 && docker completion zsh > "${HOME}/.zsh_completions/docker"
+command -v kubectl >/dev/null 2>&1 && kubectl completion zsh > "${HOME}/.zsh_completions/kubectl"
+command -v helm >/dev/null 2>&1 && helm completion zsh > "${HOME}/.zsh_completions/helm"
+[ -s "${HOME}/.nvm/bash_completion" ] && cp "${HOME}/.nvm/bash_completion" "${HOME}/.zsh_completions/nvm"
+command -v npm >/dev/null 2>&1 && npm completion > "${HOME}/.zsh_completions/npm"
