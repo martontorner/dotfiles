@@ -34,6 +34,7 @@ kevinrose.vsc-python-indent
 maarti.jenkins-doc
 mads-hartmann.bash-ide-vscode
 meganrogge.template-string-converter
+mellowmarshmallow.groovy
 mikestead.dotenv
 ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
@@ -61,7 +62,6 @@ sburg.vscode-javascript-booster
 streetsidesoftware.code-spell-checker
 stylelint.vscode-stylelint
 tomwhite007.rename-angular-component
-undefined_publisher.angular-cli-schematics
 unifiedjs.vscode-mdx
 vitest.explorer
 wix.vscode-import-cost
