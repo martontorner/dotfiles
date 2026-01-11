@@ -17,18 +17,25 @@ rm -rf ~/.dotfiles && mkdir -p ~/.dotfiles
 curl -#L https://github.com/martontorner/dotfiles/tarball/main | tar -xzv -C ~/.dotfiles --strip-components 1 && ~/.dotfiles/bootstrap.sh
 ```
 
-## Extra
+## Setup
 
-The ~/.extra to be sourced along with other tools. You can use this file to override some settings or add additional functionalities.
+- brew/install.sh
+- brew/setup.sh
+- macos/setup.sh
+- git/setup.sh
 
-### Git Credentials (example)
+### Git Credentials
 
 The .gitconfig file includes the `~/.gitconfig.user` file (created by the
 bootstrap script since git cannot handle optional includes), you can use this
 file to add some user specific configs that are not part of this repository. The
-git folder contains a setup script to generate user info. Some shell functions
-use user-specific env variables, those should also be set here. An example:
+git folder contains a setup script to generate user info.
 
+## Extra
+
+The ~/.extra to be sourced along with other tools. You can use this file to override some settings or add additional functionalities.
+
+Some shell functions use user-specific env variables, those should also be set here. An example:
 ```shell
 ### GIT ###
 GITHUB_USERNAME="martontorner"
