@@ -11,9 +11,11 @@ mkdir -p "$GPG_HOME"
 chmod 700 "$GPG_HOME"
 
 gpg --batch --generate-key <<EOF
-Key-Type: ed25519
+Key-Type: eddsa
+Key-Curve: ed25519
 Key-Usage: sign
-Subkey-Type: cv25519
+Subkey-Type: ecdh
+Subkey-Curve: cv25519
 Subkey-Usage: encrypt
 Name-Real: ${GIT_USER_NAME}
 Name-Email: ${GIT_USER_EMAIL}
