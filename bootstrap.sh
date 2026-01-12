@@ -55,6 +55,10 @@ find "$DOTFILES" -type f -name LINKS | while IFS= read -r links_file; do
   done < "$links_file"
 done
 
+# Restart processes and clear caches
+atsutil databases -remove
+killall fontd
+
 # Setup completions for bash
 mkdir -p "${HOME}/.bash_completions"
 command -v docker >/dev/null 2>&1 && docker completion bash > "${HOME}/.bash_completions/docker"

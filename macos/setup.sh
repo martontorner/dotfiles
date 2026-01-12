@@ -225,7 +225,7 @@ defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
 # Disable auto-correct
 defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
 
-# Disable AutoFill
+# Enable AutoFill
 defaults write com.apple.Safari AutoFillFromAddressBook -bool true
 defaults write com.apple.Safari AutoFillPasswords -bool true
 defaults write com.apple.Safari AutoFillCreditCardData -bool true
@@ -371,7 +371,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Set desktop background to a solid gray color
 osascript << EOF
 tell application "Finder"
-  set desktop picture to POSIX file "${DOTFILES}/macos/bg.png"
+  set desktop picture to POSIX file "${DOTFILES}/images/bg.png"
 end tell
 EOF
 
@@ -385,6 +385,7 @@ for app in "Activity Monitor" \
 	"cfprefsd" \
 	"Contacts" \
 	"Dock" \
+	"fontd" \
 	"Finder" \
 	"Google Chrome" \
 	"Mail" \
