@@ -252,5 +252,7 @@
 	<integer>60</integer>
 	<key>type</key>
 	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<true/>
 </dict>
 </plist>
