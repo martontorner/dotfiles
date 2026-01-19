@@ -10,8 +10,13 @@ prepare:  ## Prepare the development environment.
 bootstrap:  ## Install/upgrade dotfiles.
 	@./bootstrap.sh
 
+brew: ## Install/upgrade Homebrew packages.
+	@brew bundle --file brew/Brewfile
+
 vscode-export-extensions:  ## Export VS Code extensions.
 	@code --list-extensions | sort > vscode/extensions.txt
+	@brew bundle dump --vscode --file vscode/Brewfile --force
 
 vscode-import-extensions:  ## Import VS Code extensions.
 	@xargs -n 1 code --install-extension < vscode/extensions.txt
+# 	@brew bundle --vscode --file vscode/Brewfile

@@ -26,6 +26,7 @@ golang.go
 gruntfuggly.todo-tree
 hansuxdev.bootstrap5-snippets
 hashicorp.hcl
+hediet.vscode-drawio
 ivory-lab.jenkinsfile-support
 jasonlhy.hungry-delete
 jinliming2.vscode-go-template
