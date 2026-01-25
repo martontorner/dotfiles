@@ -23,6 +23,9 @@ DOTFILES=$(get_dotfiles_directory)
 # Setup path
 printf 'export DOTFILES=%s\n' "$DOTFILES" > "${HOME}/.path"
 
+# Create local (user-specific) bin directory
+mkdir -p "${HOME}/.local/bin"
+
 # Create extra configuration files if not exist
 touch "${HOME}/.hushlogin"
 touch "${HOME}/.extra"

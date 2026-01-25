@@ -1,5 +1,8 @@
 function _add_to_path_if_exists() { [[ -d "$1" ]] && export PATH="${1}:${PATH}"; }
 
+# Local
+_add_to_path_if_exists "${HOME}/.local/bin"
+
 # VS Code
 _add_to_path_if_exists "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
