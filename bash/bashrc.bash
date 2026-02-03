@@ -5,6 +5,10 @@ shopt -s histappend
 # Path
 _source_if_exists "${HOME}/.path"
 
+# Homebrew
+_source_if_exists "${DOTFILES}/brew/_/exports.sh"
+_source_if_exists "${DOTFILES}/brew/_/tools.sh"
+
 # General
 _source_if_exists "${DOTFILES}/shell/_/exports.sh"
 _source_if_exists "${DOTFILES}/shell/_/paths.sh"
@@ -14,10 +18,6 @@ _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 # Specific
 _source_if_exists "${DOTFILES}/bash/_/completions.sh"
 _source_if_exists "${DOTFILES}/bash/_/prompts.sh"
-
-# Plugins
-# TODO: can we move this to an external file?
-_source_if_exists "${HOMEBREW_ROOT}/opt/nvm/nvm.sh"
 
 # Overrides
 _source_if_exists "${HOME}/.extra"

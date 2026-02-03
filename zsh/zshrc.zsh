@@ -17,6 +17,10 @@ setopt hist_verify            # show command with history expansion to user befo
 # Path
 _source_if_exists "${HOME}/.path"
 
+# Homebrew
+_source_if_exists "${DOTFILES}/brew/_/exports.sh"
+_source_if_exists "${DOTFILES}/brew/_/tools.sh"
+
 # General
 _source_if_exists "${DOTFILES}/shell/_/exports.sh"
 _source_if_exists "${DOTFILES}/shell/_/paths.sh"
@@ -27,13 +31,8 @@ _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 _source_if_exists "${DOTFILES}/zsh/_/completions.sh"
 _source_if_exists "${DOTFILES}/zsh/_/fpaths.sh"
 _source_if_exists "${DOTFILES}/zsh/_/hooks.sh"
+_source_if_exists "${DOTFILES}/zsh/_/plugins.sh"
 _source_if_exists "${DOTFILES}/zsh/_/prompts.sh"
-
-# Plugins
-# TODO: can we move this to an external file?
-_source_if_exists "${HOMEBREW_ROOT}/opt/nvm/nvm.sh"
-_source_if_exists "${HOMEBREW_ROOT}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-_source_if_exists "${HOMEBREW_ROOT}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Overrides
 _source_if_exists "${HOME}/.extra"
