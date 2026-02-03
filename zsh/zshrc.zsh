@@ -1,6 +1,7 @@
 function _source_if_exists() { [[ -f "$1" ]] && source "$1"; }
 
 autoload -U zmv
+autoload -U add-zsh-hook
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 autoload -U compinit && compinit
@@ -25,6 +26,7 @@ _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 # Specific
 _source_if_exists "${DOTFILES}/zsh/_/completions.sh"
 _source_if_exists "${DOTFILES}/zsh/_/fpaths.sh"
+_source_if_exists "${DOTFILES}/zsh/_/hooks.sh"
 _source_if_exists "${DOTFILES}/zsh/_/prompts.sh"
 
 # Plugins
