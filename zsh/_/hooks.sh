@@ -18,3 +18,18 @@ function chpwd-load-nvmrc() {
 }
 add-zsh-hook chpwd chpwd-load-nvmrc
 chpwd-load-nvmrc
+
+function chpwd-load-venv() {
+  local venv_path
+  venv_path="$(venv_find_dotvenv)"
+
+  if [[ -n "$VIRTUAL_ENV" && "$VIRTUAL_ENV" != "$venv_path" ]]; then
+    deactivate 2>/dev/null || true
+  fi
+
+  if [[ -n "$venv_path" && -f "$venv_path/bin/activate" && "$VIRTUAL_ENV" != "$venv_path" ]]; then
+    source "$venv_path/bin/activate"
+  fi
+}
+add-zsh-hook chpwd chpwd-load-venv
+chpwd-load-venv

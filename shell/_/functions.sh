@@ -224,4 +224,21 @@ Usage: github_clone_own <name> [<path>]
 }
 alias ghco='github_clone_own'
 
+# Find nearest .venv file
+function venv_find_dotvenv() {
+  local dir="$PWD"
+
+  while true; do
+    if [[ -d "$dir/.venv" ]]; then
+      echo "$dir/.venv"
+      return 0
+    fi
+
+    [[ "$dir" == "/" ]] && break
+    dir="$(dirname "$dir")"
+  done
+
+  return 1
+}
+
 set +e
