@@ -4,7 +4,7 @@ function _source_if_exists() { [[ -f "$1" ]] && source "$1"; }
 _source_if_exists "${HOME}/.path"
 
 # Login
-_source_if_exists "${DOTFILES}/shell/_/banner.sh"
+_source_if_exists "${DOTFILES}/shell/_/banners.sh"
 
 # Interactive
-_source_if_exists "${HOME}/.zshrc"
+# zsh automatically sources .zshrc for interactive shells
