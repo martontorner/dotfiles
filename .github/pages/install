@@ -1,0 +1,79 @@
+#!/usr/bin/env sh
+
+confirm() {
+  # $1: prompt
+  # $2: default (optional, y or n; defaults to y)
+
+  prompt=$1
+  default=$(printf '%s' "${2:-y}" | tr '[:upper:]' '[:lower:]')
+
+  case "$default" in
+    y) suffix="[Y/n]" ;;
+    n) suffix="[y/N]" ;;
+    *) printf 'Invalid default: %s\n' "$2" >&2; return 2 ;;
+  esac
+
+  while :; do
+    printf '%s %s ' "${prompt}" "${suffix}" > /dev/tty
+    IFS= read -r answer < /dev/tty || return 1
+
+    answer=$(printf '%s' "${answer}" | tr '[:upper:]' '[:lower:]')
+    [ -z "${answer}" ] && answer="${default}"
+
+    case "${answer}" in
+      y|yes) return 0 ;;
+      n|no)  return 1 ;;
+      *) printf 'Please answer y or n.\n' > /dev/tty ;;
+    esac
+  done
+}
+
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+
+# Check if already installed
+if [ -d "${DOTFILES}" ]; then
+  echo "Already installed at ${DOTFILES}, please remove it first."
+  exit 1
+fi
+
+# Detect platform
+case "$(uname -s)" in
+    Darwin) os="darwin" ;;
+    Linux) os="linux" ;;
+    *) echo "Windows is not supported" >&2; exit 1 ;;
+esac
+
+if command -v git >/dev/null 2>&1; then
+  git clone --quiet https://github.com/martontorner/.dotfiles.git "${DOTFILES}" >/dev/null 2>&1 || exit 1
+else
+  mkdir -p "${DOTFILES}"
+  curl -fsSL https://github.com/martontorner/dotfiles/tarball/main | tar -xzv --strip-components 1 -C "${DOTFILES}" >/dev/null 2>&1 || exit 1
+fi
+
+if confirm "Bootstrap dotfiles?"; then
+  ${DOTFILES}/bootstrap.sh
+fi
+
+if confirm "Install Homebrew?"; then
+  ${DOTFILES}/brew/install.sh
+fi
+
+if confirm "Set up Homebrew?"; then
+  ${DOTFILES}/brew/setup.sh
+fi
+
+if confirm "Set up git?"; then
+  ${DOTFILES}/git/setup.sh
+fi
+
+if [ "${os}" = "darwin" ] && confirm "Set up fonts?"; then
+  ${DOTFILES}/fonts/setup.sh
+fi
+
+if [ "${os}" = "darwin" ] && confirm "Set up macos?"; then
+  ${DOTFILES}/macos/setup.sh
+fi
+
+echo ""
+echo "Dotfiles installation complete!"
+echo ""

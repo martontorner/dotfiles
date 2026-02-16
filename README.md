@@ -4,27 +4,17 @@ My [dotfiles] repository.
 
 ## Install
 
-### git
-
 ```shell
-git clone https://github.com/martontorner/.dotfiles.git ~/.dotfiles && ~/.dotfiles/bootstrap.sh
+curl -fsSL https://dotfiles.martontorner.com/install | sh ; exec $SHELL
 ```
 
-### curl
+## Update
 
 ```shell
-rm -rf ~/.dotfiles && mkdir -p ~/.dotfiles
-curl -#L https://github.com/martontorner/dotfiles/tarball/main | tar -xzv -C ~/.dotfiles --strip-components 1 && ~/.dotfiles/bootstrap.sh
+${DOTFILES}/bootstrap.sh ; exec $SHELL
 ```
 
-## Setup
-
-- brew/install.sh
-- brew/setup.sh
-- macos/setup.sh
-- git/setup.sh
-
-### Git Credentials
+## Git Config (local)
 
 The .gitconfig file includes the `~/.gitconfig.user` file (created by the
 bootstrap script since git cannot handle optional includes), you can use this
@@ -33,10 +23,15 @@ git folder contains a setup script to generate user info.
 
 ## Extra
 
-The ~/.extra to be sourced along with other tools. You can use this file to override some settings or add additional functionalities.
+The ~/.extra to be sourced along with other tools. You can use this file to
+override some settings or add additional functionalities.
 
-Some shell functions use user-specific env variables, those should also be set here. An example:
+Some shell functions use user-specific env variables, those should also be set
+here, e.g.:
+
 ```shell
+# ~/.extra
+
 ### GIT ###
 GITHUB_USERNAME="martontorner"
 ### GIT ###
@@ -47,6 +42,7 @@ GITHUB_USERNAME="martontorner"
 ### Prepare
 
 Prepare local development environment:
+
 ```shell
 make prepare
 ```
