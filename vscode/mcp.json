@@ -1,0 +1,23 @@
+{
+	"inputs": [],
+	"servers": {
+		"angular": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@angular/cli@latest",
+				"mcp"
+			],
+			"type": "stdio"
+		},
+		"shadcn": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"shadcn@latest",
+				"mcp"
+			],
+			"type": "stdio"
+		}
+	}
+}
