@@ -1,0 +1,134 @@
+colourful: true
+
+filekinds:
+  normal: { foreground: Default }
+  directory: { foreground: Blue, is_bold: true }
+  symlink: { foreground: Cyan }
+  pipe: { foreground: Yellow }
+  block_device: { foreground: Yellow, is_bold: true }
+  char_device: { foreground: Yellow, is_bold: true }
+  socket: { foreground: Red, is_bold: true }
+  special: { foreground: Yellow }
+  executable: { foreground: Green, is_bold: true }
+  mount_point: { foreground: Blue, is_bold: true, is_underline: true }
+
+file_type:
+  image: { foreground: Purple }
+  video: { foreground: Purple }
+  music: { foreground: Cyan }
+  lossless: { foreground: Cyan }
+  crypto: { foreground: Green }
+  document: { foreground: White }
+  compressed: { foreground: White, is_bold: true }
+  temp: { foreground: White, is_dimmed: true }
+  source: { foreground: Yellow }
+  build: { foreground: Yellow, is_bold: true }
+  compiled: { foreground: Yellow, is_bold: true, is_underline: true }
+
+perms:
+  user_read: { foreground: Default }
+  user_write: { foreground: Default }
+  user_execute_file: { foreground: Default }
+  user_execute_other: { foreground: Default }
+  group_read: { foreground: Default }
+  group_write: { foreground: Default }
+  group_execute: { foreground: Default }
+  other_read: { foreground: Default }
+  other_write: { foreground: Default }
+  other_execute: { foreground: Default }
+  special_user_file: { foreground: Default }
+  special_other: { foreground: Default }
+  attribute: { foreground: Default }
+
+size:
+  major: { foreground: Default }
+  minor: { foreground: Default }
+  number_byte: { foreground: Default }
+  number_kilo: { foreground: Default }
+  number_mega: { foreground: Default }
+  number_giga: { foreground: Default }
+  number_huge: { foreground: Default }
+  unit_byte: { foreground: Default }
+  unit_kilo: { foreground: Default }
+  unit_mega: { foreground: Default }
+  unit_giga: { foreground: Default }
+  unit_huge: { foreground: Default }
+
+users:
+  user_you: { foreground: Default }
+  group_yours: { foreground: Default }
+  user_other: { foreground: Default, is_dimmed: true }
+  group_other: { foreground: Default, is_dimmed: true }
+  user_root: { foreground: Default, is_bold: true, is_dimmed: true }
+  group_root: { foreground: Default, is_bold: true, is_dimmed: true }
+
+links:
+  normal: { foreground: Default }
+  multi_link_file: { foreground: Default }
+
+git:
+  ignored: { foreground: Default, is_dimmed: true }
+  new: { foreground: Green }
+  modified: { foreground: Yellow }
+  renamed: { foreground: Yellow }
+  typechange: { foreground: Yellow }
+  deleted: { foreground: Red }
+  conflicted: { foreground: Red }
+
+git_repo:
+  branch_main: { foreground: Green }
+  branch_other: { foreground: Cyan }
+  git_clean: { foreground: Green }
+  git_dirty: { foreground: Yellow }
+
+security_context:
+  colon: { foreground: Default }
+  user: { foreground: Default }
+  role: { foreground: Default }
+  typ: { foreground: Default }
+  range: { foreground: Default }
+
+punctuation: { foreground: Default }
+date: { foreground: Default }
+inode: { foreground: Default }
+blocks: { foreground: Default }
+header: { foreground: Default }
+octal: { foreground: Default }
+flags: { foreground: Default }
+
+control_char: { foreground: Default }
+symlink_path: { foreground: Default }
+broken_symlink: { foreground: Red }
+broken_path_overlay: { foreground: Default }
+
+filenames:
+  # git
+  .husky: { icon: { glyph: "" } }
+  .githooks: { icon: { glyph: "" } }
+  .gitattributes:
+    filename: { foreground: LightRed }
+    icon: { style: { foreground: LightRed }, glyph: "󰊢" }
+  .gitconfig:
+    filename: { foreground: LightRed }
+    icon: { style: { foreground: LightRed }, glyph: "󰊢" }
+  .gitignore:
+    filename: { foreground: LightRed }
+    icon: { style: { foreground: LightRed }, glyph: "󰊢" }
+  .gitmessage:
+    filename: { foreground: LightRed }
+    icon: { style: { foreground: LightRed }, glyph: "󰊢" }
+  # node
+  .nvmrc: { icon: { glyph: "" } }
+  # system
+  .DS_Store:
+    filename: { foreground: Gray, is_dimmed: true }
+    icon: { style: { foreground: Gray, is_dimmed: true } }
+  # text
+  LICENSE:
+    filename: { foreground: DarkGray }
+    icon: { style: { foreground: DarkGray } }
+extensions:
+  # text
+  md:
+    filename: { foreground: DarkGray }
+    icon: { style: { foreground: DarkGray } }

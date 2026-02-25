@@ -19,5 +19,8 @@ _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 _source_if_exists "${DOTFILES}/bash/_/completions.sh"
 _source_if_exists "${DOTFILES}/bash/_/prompts.sh"
 
+# Tools
+_source_if_exists "${DOTFILES}/eza/_/exports.sh"
+
 # Overrides
 _source_if_exists "${HOME}/.extra"

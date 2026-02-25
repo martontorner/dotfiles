@@ -34,5 +34,8 @@ _source_if_exists "${DOTFILES}/zsh/_/hooks.sh"
 _source_if_exists "${DOTFILES}/zsh/_/plugins.sh"
 _source_if_exists "${DOTFILES}/zsh/_/prompts.sh"
 
+# Tools
+_source_if_exists "${DOTFILES}/eza/_/exports.sh"
+
 # Overrides
 _source_if_exists "${HOME}/.extra"

@@ -3,7 +3,16 @@ alias ...='cd ../..'
 alias cdd="cd ~/.dotfiles"
 alias cdt="cd ~/tmp"
 
-alias ll='ls -l -a -h -v -F --color=always --group-directories-first'
+if command -v eza > /dev/null 2>&1; then
+  alias ls='eza -l -aa -F --color=always --group-directories-first --icons --no-quotes --no-user --no-time --no-filesize'
+  alias ll='eza -l -aa -g -F --color=always --group-directories-first --icons --no-quotes'
+  alias lll='ll --links --git --git-repos'
+
+  alias gls='ls'
+  alias gll='ls -l -a -h -v -F --color=always --group-directories-first'
+else
+  alias ll='ls -l -a -h -v -F --color=always --group-directories-first'
+fi
 alias tree='tree -C --dirsfirst'
 
 alias h='history_pretty | tail'
