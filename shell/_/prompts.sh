@@ -1,22 +1,11 @@
-_host_status () {
-  local line=""
-
-  line="${line}$(__with_color "0;38;5;31;48;49;22")"
-  line="${line}$(__with_print "")"
-  line="${line}$(__with_color "0;38;5;231;48;5;31")"
-  line="${line}$(__with_print " $(hostname) ")"
-  line="${line}$(__with_color "0;38;5;31;48;5;166;22")"
-  line="${line}$(__with_print "")"
-
-  echo "${line}"
-}
-
 _user_status () {
   local line=""
 
-  line="${line}$(__with_color "0;38;5;229;48;5;166")"
-  line="${line}$(__with_print "  $(whoami) ")"
-  line="${line}$(__with_color "0;38;5;166;48;5;240;22")"
+  line="${line}$(__with_color "0;38;5;240;48;240;22")"
+  line="${line}$(__with_print "")"
+  line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+  line="${line}$(__with_print " $(whoami) ")"
+  line="${line}$(__with_color "0;38;5;240;48;5;236;22")"
   line="${line}$(__with_print "")"
 
   echo "${line}"
@@ -29,21 +18,21 @@ _path_status () {
   if [[ "$PWD" == "$HOME"* ]]; then
     while IFS= read -r p; do
       PARTS+=("$p")
-    done < <(printf '%s\n' "~${PWD#$HOME}" | tr '/' '\n')
+    done < <(printf '%s\n' "${PWD#$HOME}" | tr '/' '\n')
   else
     while IFS= read -r p; do
       PARTS+=("$p")
-    done < <(printf '%s\n' "${PWD#/}" | tr '/' '\n')
+    done < <(printf '%s\n' "${PWD}" | tr '/' '\n')
     PARTS[0]="/"
   fi
 
-  line="${line}$(__with_color "0;38;5;250;48;5;240")"
+  line="${line}$(__with_color "0;38;5;250;48;5;236")"
 
   if [ ${#PARTS[@]} -gt 4 ]; then
-    line="${line}$(__with_print " ... ")"
-    line="${line}$(__with_color "0;38;5;245;48;5;240;22")"
+    line="${line}$(__with_print " … ")"
+    line="${line}$(__with_color "0;38;5;247;48;5;236")"
     line="${line}$(__with_print "")"
-    line="${line}$(__with_color "0;38;5;250;48;5;240")"
+    line="${line}$(__with_color "0;38;5;247;48;5;236")"
 
     PARTS=("${PARTS[@]: -3}")
   fi
@@ -52,14 +41,17 @@ _path_status () {
   if [ "${length}" -gt 0 ]; then
     for part in "${PARTS[@]::${length}-1}"; do
       line="${line}$(__with_print " ${part} ")"
-      line="${line}$(__with_color "0;38;5;245;48;5;240;22")"
+      line="${line}$(__with_color "0;38;5;245;48;5;236;22")"
       line="${line}$(__with_print "")"
-      line="${line}$(__with_color "0;38;5;250;48;5;240")"
+      line="${line}$(__with_color "0;38;5;250;48;5;236")"
     done
 
-    line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+    line="${line}$(__with_color "0;38;5;250;48;5;236")"
     line="${line}$(__with_print " ${PARTS[${length}-1]} ")"
   fi
+
+  line="${line}$(__with_color "0;38;5;236;48;5;240;1")"
+  line="${line}$(__with_print "")"
 
   echo "${line}"
 }
@@ -70,7 +62,7 @@ _repo_status () {
   local branch=$(git branch 2> /dev/null | grep "\*" | sed -e "s/* \(.*\)/\1/")
 
   if [ "$branch" ]; then
-    line="${line}$(__with_color "0;38;5;240;48;5;236;22")"
+    line="${line}$(__with_color "0;38;5;240;48;5;236")"
     line="${line}$(__with_print "")"
 
     status_info="$(git status --branch --porcelain)"
@@ -79,11 +71,11 @@ _repo_status () {
     file_info="$(echo "${status_info}" | tail -n +2)"
 
     if [ "${file_info}" ]; then
-      line="${line}$(__with_color "0;38;5;247;48;5;236")"
+      line="${line}$(__with_color "0;38;5;250;48;5;236")"
     else
       line="${line}$(__with_color "0;38;5;2;48;5;236")"
     fi
-    line="${line}$(__with_print "  ${branch} ")"
+    line="${line}$(__with_print "  ${branch} ")"
 
     behind="$(echo "${branch_info}" | sed -E "s/.*behind\ ([0-9]+).*/\1/" | sed -e "s/^##.*//")"
     if [ ! -z "${behind}" ]; then
@@ -134,21 +126,32 @@ _repo_status () {
   echo "${line}"
 }
 
+_time_status () {
+  local line=""
+
+  line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+  line="${line}$(__with_print " $(date +'%I:%M %p') ")"
+
+  line="${line}$(__with_color "0;38;5;240;48;49;22")"
+  line="${line}$(__with_print "")"
+  line="${line}$(__with_color "0")"
+
+  echo "${line}"
+}
+
 _exit_status () {
   local line=""
 
   local exit_code=$1
 
   if [ "${exit_code}" -gt 0 ]; then
-    line="${line}$(__with_color "0;38;5;240;48;5;52;22")"
-    line="${line}$(__with_print "")"
-    line="${line}$(__with_color "0;38;5;231;48;5;52")"
-    line="${line}$(__with_print " ${exit_code} ")"
+    line="${line}$(__with_print " ")"
     line="${line}$(__with_color "0;38;5;52;48;49;22")"
-    line="${line}$(__with_print "")"
-  else
-    line="${line}$(__with_color "0;38;5;240;48;49;22")"
-    line="${line}$(__with_print "")"
+    line="${line}$(__with_print "")"
+    line="${line}$(__with_color "0;38;5;252;48;5;52;1")"
+    line="${line}$(__with_print "${exit_code}")"
+    line="${line}$(__with_color "0;38;5;52;48;49;22")"
+    line="${line}$(__with_print "")"
   fi
 
   echo "${line}"
@@ -158,11 +161,11 @@ _kube_status () {
   local line=""
 
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
-  line="${line}$(__with_print "")"
+  line="${line}$(__with_print "")"
 
   if command -v docker &> /dev/null; then
     line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
-    line="${line}$(__with_print "   ")"
+    line="${line}$(__with_print " ")"
   fi
 
   local context=$(kubectl config current-context 2> /dev/null)
@@ -239,12 +242,11 @@ _tool_status () {
   echo "${line}"
 }
 
-_time_status () {
+_shell_status () {
   local line=""
 
   line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
-  line="${line}$(__with_print " $(date +'%I:%M %p')  ")"
-
+  line="${line}$(__with_print " ${SHELL##*/}") "
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
   line="${line}$(__with_print "")"
   line="${line}$(__with_color "0")"
@@ -256,15 +258,15 @@ _create_status_line () {
   local line_s=""
   local line_e=""
 
-  line_s="${line_s}$(_host_status)"
   line_s="${line_s}$(_user_status)"
   line_s="${line_s}$(_path_status)"
   line_s="${line_s}$(_repo_status)"
+  line_s="${line_s}$(_time_status)"
   line_s="${line_s}$(_exit_status $1)"
 
   line_e="${line_e}$(_kube_status)"
   line_e="${line_e}$(_tool_status)"
-  line_e="${line_e}$(_time_status)"
+  line_e="${line_e}$(_shell_status)"
 
   line_s_length=$(__prompt_length "${line_s}")
   line_e_length=$(__prompt_length "${line_e}")
