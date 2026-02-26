@@ -8,6 +8,9 @@ if command -v eza > /dev/null 2>&1; then
   alias ll='eza -l -aa -g -F --color=always --group-directories-first --icons --no-quotes'
   alias lll='ll --links --git --git-repos'
 
+  alias lt='eza -l -a -F --color=always --group-directories-first --tree --icons --no-quotes --no-user --no-time --no-filesize --no-permissions --git-ignore'
+  alias llt='eza -l -a -F --color=always --group-directories-first --tree --icons --no-quotes'
+
   alias gls='ls'
   alias gll='ls -l -a -h -v -F --color=always --group-directories-first'
 else
