@@ -66,6 +66,10 @@ if confirm "Set up git?"; then
   ${DOTFILES}/git/setup.sh
 fi
 
+if confirm "Set up tmux?"; then
+  ${DOTFILES}/tmux/setup.sh
+fi
+
 if [ "${os}" = "darwin" ] && confirm "Set up fonts?"; then
   ${DOTFILES}/fonts/setup.sh
 fi
