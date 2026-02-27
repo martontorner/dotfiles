@@ -3,7 +3,7 @@ _user_status () {
 
   line="${line}$(__with_color "0;38;5;240;48;240;22")"
   line="${line}$(__with_print "")"
-  line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+  line="${line}$(__with_color "0;38;5;254;48;5;240")"
   line="${line}$(__with_print " $(whoami) ")"
   line="${line}$(__with_color "0;38;5;240;48;5;236;22")"
   line="${line}$(__with_print "")"
@@ -32,7 +32,7 @@ _path_status () {
     line="${line}$(__with_print " … ")"
     line="${line}$(__with_color "0;38;5;247;48;5;236")"
     line="${line}$(__with_print "")"
-    line="${line}$(__with_color "0;38;5;247;48;5;236")"
+    line="${line}$(__with_color "0;38;5;250;48;5;236")"
 
     PARTS=("${PARTS[@]: -3}")
   fi
@@ -41,7 +41,7 @@ _path_status () {
   if [ "${length}" -gt 0 ]; then
     for part in "${PARTS[@]::${length}-1}"; do
       line="${line}$(__with_print " ${part} ")"
-      line="${line}$(__with_color "0;38;5;245;48;5;236;22")"
+      line="${line}$(__with_color "0;38;5;247;48;5;236;22")"
       line="${line}$(__with_print "")"
       line="${line}$(__with_color "0;38;5;250;48;5;236")"
     done
@@ -129,7 +129,7 @@ _repo_status () {
 _time_status () {
   local line=""
 
-  line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+  line="${line}$(__with_color "0;38;5;254;48;5;240")"
   line="${line}$(__with_print " $(date +'%I:%M %p') ")"
 
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
@@ -148,7 +148,7 @@ _exit_status () {
     line="${line}$(__with_print " ")"
     line="${line}$(__with_color "0;38;5;52;48;49;22")"
     line="${line}$(__with_print "")"
-    line="${line}$(__with_color "0;38;5;252;48;5;52;1")"
+    line="${line}$(__with_color "0;38;5;254;48;5;52")"
     line="${line}$(__with_print "${exit_code}")"
     line="${line}$(__with_color "0;38;5;52;48;49;22")"
     line="${line}$(__with_print "")"
@@ -164,14 +164,14 @@ _kube_status () {
   line="${line}$(__with_print "")"
 
   if command -v docker &> /dev/null; then
-    line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+    line="${line}$(__with_color "0;38;5;254;48;5;240")"
     line="${line}$(__with_print " ")"
   fi
 
   local context=$(kubectl config current-context 2> /dev/null)
 
   if [ "${context}" ]; then
-    line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+    line="${line}$(__with_color "0;38;5;254;48;5;240")"
     line="${line}$(__with_print "${context} ")"
   fi
 
@@ -188,7 +188,7 @@ _tool_status () {
 
     line="${line}$(__with_color "0;38;5;75;48;5;236")"
     line="${line}$(__with_print " ")"
-    line="${line}$(__with_color "0;38;5;247;48;5;236")"
+    line="${line}$(__with_color "0;38;5;250;48;5;236")"
     line="${line}$(__with_print " ${version/Python /} ")"
   elif command -v python >/dev/null 2>&1; then
     has_version=1
@@ -197,7 +197,7 @@ _tool_status () {
 
     line="${line}$(__with_color "0;38;5;75;48;5;236")"
     line="${line}$(__with_print " ")"
-    line="${line}$(__with_color "0;38;5;247;48;5;236")"
+    line="${line}$(__with_color "0;38;5;250;48;5;236")"
     line="${line}$(__with_print " ${version/Python /} ")"
   fi
 
@@ -212,7 +212,7 @@ _tool_status () {
 
     line="${line}$(__with_color "0;38;5;2;48;5;236")"
     line="${line}$(__with_print " ")"
-    line="${line}$(__with_color "0;38;5;247;48;5;236")"
+    line="${line}$(__with_color "0;38;5;250;48;5;236")"
     line="${line}$(__with_print " ${version/v/} ")"
   fi
 
@@ -227,7 +227,7 @@ _tool_status () {
 
     line="${line}$(__with_color "0;38;5;39;48;5;236")"
     line="${line}$(__with_print " 󰟓 ")"
-    line="${line}$(__with_color "0;38;5;247;48;5;236")"
+    line="${line}$(__with_color "0;38;5;250;48;5;236")"
     line="${line}$(__with_print " ${version/go/} ")"
   fi
 
@@ -245,7 +245,7 @@ _tool_status () {
 _shell_status () {
   local line=""
 
-  line="${line}$(__with_color "0;38;5;252;48;5;240;1")"
+  line="${line}$(__with_color "0;38;5;254;48;5;240")"
   line="${line}$(__with_print " ${SHELL##*/}") "
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
   line="${line}$(__with_print "")"
