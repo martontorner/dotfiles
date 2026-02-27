@@ -1,10 +1,18 @@
 _user_status () {
   local line=""
 
+  local os=""
+  case "$(uname -s)" in
+    Darwin) os="" ;;
+    Linux) os="" ;;
+    Windows) os="" ;;
+    *) os="" ;;
+  esac
+
   line="${line}$(__with_color "0;38;5;240;48;240;22")"
   line="${line}$(__with_print "")"
   line="${line}$(__with_color "0;38;5;254;48;5;240")"
-  line="${line}$(__with_print " $(whoami) ")"
+  line="${line}$(__with_print "${os} $(whoami) ")"
   line="${line}$(__with_color "0;38;5;240;48;5;236;22")"
   line="${line}$(__with_print "")"
 
@@ -23,7 +31,7 @@ _path_status () {
     while IFS= read -r p; do
       PARTS+=("$p")
     done < <(printf '%s\n' "${PWD}" | tr '/' '\n')
-    PARTS[0]="/"
+    PARTS[0]=""
   fi
 
   line="${line}$(__with_color "0;38;5;250;48;5;236")"
@@ -126,11 +134,18 @@ _repo_status () {
   echo "${line}"
 }
 
-_time_status () {
+_exit_status () {
   local line=""
 
-  line="${line}$(__with_color "0;38;5;254;48;5;240")"
-  line="${line}$(__with_print " $(date +'%I:%M %p') ")"
+  local exit_code=$1
+
+  if [ "${exit_code}" -gt 0 ]; then
+    line="${line}$(__with_color "0;38;5;1;48;5;240")"
+    line="${line}$(__with_print " ${exit_code} ✖")"
+  else
+    line="${line}$(__with_color "0;38;5;254;48;5;240")"
+    line="${line}$(__with_print " ✓")"
+  fi
 
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
   line="${line}$(__with_print "")"
@@ -139,41 +154,13 @@ _time_status () {
   echo "${line}"
 }
 
-_exit_status () {
-  local line=""
-
-  local exit_code=$1
-
-  if [ "${exit_code}" -gt 0 ]; then
-    line="${line}$(__with_print " ")"
-    line="${line}$(__with_color "0;38;5;52;48;49;22")"
-    line="${line}$(__with_print "")"
-    line="${line}$(__with_color "0;38;5;254;48;5;52")"
-    line="${line}$(__with_print "${exit_code}")"
-    line="${line}$(__with_color "0;38;5;52;48;49;22")"
-    line="${line}$(__with_print "")"
-  fi
-
-  echo "${line}"
-}
-
-_kube_status () {
+_shell_status () {
   local line=""
 
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
   line="${line}$(__with_print "")"
-
-  if command -v docker &> /dev/null; then
-    line="${line}$(__with_color "0;38;5;254;48;5;240")"
-    line="${line}$(__with_print " ")"
-  fi
-
-  local context=$(kubectl config current-context 2> /dev/null)
-
-  if [ "${context}" ]; then
-    line="${line}$(__with_color "0;38;5;254;48;5;240")"
-    line="${line}$(__with_print "${context} ")"
-  fi
+  line="${line}$(__with_color "0;38;5;254;48;5;240")"
+  line="${line}$(__with_print " ${SHELL##*/}") "
 
   echo "${line}"
 }
@@ -242,11 +229,11 @@ _tool_status () {
   echo "${line}"
 }
 
-_shell_status () {
+_time_status () {
   local line=""
 
   line="${line}$(__with_color "0;38;5;254;48;5;240")"
-  line="${line}$(__with_print " ${SHELL##*/}") "
+  line="${line}$(__with_print " $(date +'%I:%M %p')")"
   line="${line}$(__with_color "0;38;5;240;48;49;22")"
   line="${line}$(__with_print "")"
   line="${line}$(__with_color "0")"
@@ -261,12 +248,11 @@ _create_status_line () {
   line_s="${line_s}$(_user_status)"
   line_s="${line_s}$(_path_status)"
   line_s="${line_s}$(_repo_status)"
-  line_s="${line_s}$(_time_status)"
   line_s="${line_s}$(_exit_status $1)"
 
-  line_e="${line_e}$(_kube_status)"
-  line_e="${line_e}$(_tool_status)"
   line_e="${line_e}$(_shell_status)"
+  line_e="${line_e}$(_tool_status)"
+  line_e="${line_e}$(_time_status)"
 
   line_s_length=$(__prompt_length "${line_s}")
   line_e_length=$(__prompt_length "${line_e}")
