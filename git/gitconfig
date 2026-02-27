@@ -8,6 +8,12 @@
 [color]
   ui = auto
 
+[log]
+  date = format-local:"%Y-%m-%d %H:%M:%S"
+
+[pretty]
+  compact = format:"%C(green)[%h]%C(reset) %<(72,trunc)%s %C(cyan)%>(12,ltrunc)%(trailers:valueonly)%-%C(reset) %C(yellow)[%ad]%C(reset) [%G?] %C(bold red)%an%C(reset) %C(blue)%d%C(reset)"
+
 [gpg]
   program = gpg
 
@@ -29,6 +35,9 @@
 
 [alias]
   unstage = reset
+
+[trailer]
+  separators = ":#"
 
 [advice]
   addEmptyPathspec = false
