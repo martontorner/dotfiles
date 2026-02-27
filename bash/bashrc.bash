@@ -1,5 +1,8 @@
 function _source_if_exists() { [[ -f "$1" ]] && source "$1"; }
 
+# Set emacs keybindings
+set -o emacs
+
 shopt -s histappend
 
 # Path

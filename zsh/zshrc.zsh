@@ -1,5 +1,8 @@
 function _source_if_exists() { [[ -f "$1" ]] && source "$1"; }
 
+# Set emacs keybindings
+bindkey -e
+
 autoload -U zmv
 autoload -U add-zsh-hook
 autoload -U promptinit && promptinit
