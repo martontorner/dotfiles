@@ -241,4 +241,9 @@ function venv_find_dotvenv() {
   return 1
 }
 
+# Colorize help output of a command using bat
+function bathelp() {
+  "$@" --help 2>&1 | bat --plain --language=help
+}
+
 set +e

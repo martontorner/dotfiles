@@ -29,6 +29,9 @@ export MAC_REGEX="[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0
 # Mac
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Bat
+export BAT_THEME="base16"
+
 # Node
 export NVM_DIR="${HOME}/.nvm"
 

@@ -22,8 +22,10 @@ alias h='history_pretty | tail'
 
 if command -v batcat > /dev/null 2>&1; then
   alias bat="batcat --paging=never"
+  alias batp="batcat -pp"
 else
   alias bat="bat --paging=never"
+  alias batp="bat -pp"
 fi
 
 alias t='tmux'
