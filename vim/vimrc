@@ -1,5 +1,11 @@
-" Make Vim more useful
 set nocompatible
+
+if has('termguicolors')
+  set termguicolors
+endif
+
+colorscheme github
+
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
@@ -71,7 +77,11 @@ set number
 " Enable syntax highlighting
 syntax on
 " Highlight current line
-" set cursorline
+highlight CursorLine       cterm=NONE
+highlight CursorLineNr     cterm=NONE
+set cursorline
+" Show rulers
+set colorcolumn=80,120
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
@@ -91,8 +101,6 @@ set mouse=a
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
-" Show the cursor position
-set ruler
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
@@ -129,4 +137,37 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+  " Git commit editing
+  autocmd FileType gitcommit setlocal
+    \ colorcolumn=50,72
+    \ textwidth=72          " auto-wrap body at 72
+    \ spell                 " spellcheck
+    \ formatoptions+=tc     " wrap text, comments
+    \ comments=             " disable comment prefixes
 endif
+
+function! FlagsOrDash()
+  let flags = ''
+
+  if &buftype == 'help'   | let flags .= '[HLP]' | endif
+  if &readonly            | let flags .= '[RO]'  | endif
+  if &modified            | let flags .= '[+]'   | endif
+
+  return empty(flags) ? '-' : flags
+endfunction
+
+set laststatus=2
+set statusline=%#PillStart#%#PillIcon#\ %#Pill#\ %<%f%#PillEnd#%#StatusLine#%*
+set statusline+=\ %#PillStart#%#PillIcon#\ %#Pill#\ %{FlagsOrDash()}%#PillEnd#%#StatusLine#%=
+set statusline+=\ %#PillStart#%#PillIcon#\ %#Pill#\ Ln\ %l,\ Col\ %c%#PillEnd#%*
+set statusline+=\ %#PillStart#%#PillIcon#\ %#Pill#\ %{&fenc!=''?&fenc:&enc}%#PillEnd#%*
+set statusline+=\ %#PillStart#%#PillIcon#󰌑\ %#Pill#\ %{&ff=='unix'?'LF':&ff=='dos'?'CRLF':&ff=='mac'?'CR':'?'}%#PillEnd#%*
+set statusline+=\ %#PillStart#%#PillIcon#󰅩\ %#Pill#\ %{&filetype!=''?&filetype:'Plain\ Text'}%#PillEnd#%*
+
+highlight StatusLine cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=#e4e4e4
+highlight StatusLineNC cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=#e4e4e4
+
+highlight Pill         ctermbg=NONE guibg=#585858 ctermfg=NONE guifg=#e4e4e4 cterm=NONE gui=NONE
+highlight PillStart    ctermbg=NONE guibg=NONE    ctermfg=NONE guifg=#e4e4e4 cterm=NONE gui=NONE
+highlight PillIcon     ctermbg=NONE guibg=#e4e4e4 ctermfg=NONE guifg=#585858 cterm=NONE gui=NONE
+highlight PillEnd      ctermbg=NONE guibg=NONE    ctermfg=NONE guifg=#585858 cterm=NONE gui=NONE
