@@ -31,6 +31,7 @@ _source_if_exists "${DOTFILES}/shell/_/functions.sh"
 _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 
 # Specific
+_source_if_exists "${DOTFILES}/zsh/_/aliases.sh"
 _source_if_exists "${DOTFILES}/zsh/_/completions.sh"
 _source_if_exists "${DOTFILES}/zsh/_/fpaths.sh"
 _source_if_exists "${DOTFILES}/zsh/_/hooks.sh"
