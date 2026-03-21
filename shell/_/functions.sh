@@ -242,8 +242,26 @@ function venv_find_dotvenv() {
 }
 
 # Colorize help output of a command using bat
-function bathelp() {
+function help() {
   "$@" --help 2>&1 | bat --plain --language=help
+}
+
+# Colorize help output of a command using bat
+function wttr() {
+  if [ $# -gt 1 ]; then
+    echo "wttr: Get weather information
+
+Usage: wttr [<location>]
+
+If you specify a location, it will show the weather for that location. If you
+don't specify a location, it will show the weather for your current location
+based on your IP address.
+"
+
+    return 1;
+  fi
+
+  curl -s "wttr.in/${1}"
 }
 
 set +e
