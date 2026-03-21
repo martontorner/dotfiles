@@ -18,7 +18,7 @@ else
 fi
 alias tree='tree -C --dirsfirst'
 
-alias h='history_pretty | tail'
+alias h='history -na 0 | fzf --bind "ctrl-y:execute-silent(echo -n {1..} | pbcopy)+abort" --color header:italic --header "Press CTRL-Y to copy command into clipboard"'
 
 if command -v batcat > /dev/null 2>&1; then
   alias bat="batcat --paging=never"

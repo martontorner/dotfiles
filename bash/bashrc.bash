@@ -20,6 +20,7 @@ _source_if_exists "${DOTFILES}/shell/_/aliases.sh"
 
 # Specific
 _source_if_exists "${DOTFILES}/bash/_/completions.sh"
+_source_if_exists "${DOTFILES}/bash/_/tools.sh"
 _source_if_exists "${DOTFILES}/bash/_/prompts.sh"
 
 # Tools
