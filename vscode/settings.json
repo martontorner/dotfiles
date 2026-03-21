@@ -1,5 +1,6 @@
 {
   "zenMode.restore": false,
+  "window.commandCenter": false,
   "window.restoreWindows": "none",
   "workbench.startupEditor": "none",
   "workbench.activityBar.location": "top",
@@ -16,6 +17,7 @@
     "editorInlayHint.parameterBackground": "#313235"
   },
   "workbench.navigationControl.enabled": false,
+  "workbench.panel.showLabels": false,
   "workbench.editor.enablePreview": false,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editor.empty.hint": "hidden",
@@ -98,6 +100,7 @@
       }
     ]
   },
+  "explorer.autoReveal": "focusNoScroll",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
@@ -110,6 +113,7 @@
     "*.tsx": "${capture}.ts",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock, .nvmrc, .npmrc",
     "tsconfig.json": "tsconfig.*.json",
+    "angular.json": "angular.*.json",
     "vitest.config.ts": "vitest.*.ts",
     "*.go": "${capture}.go, ${capture}_test.go",
     "go.mod": "go.sum",
@@ -124,7 +128,7 @@
   "files.associations": {
     "*.conf.tmpl": "nginx"
   },
-  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font Mono",
   "terminal.integrated.fontSize": 12,
   "remote.autoForwardPortsSource": "hybrid",
   "dotfiles.repository": "martontorner/dotfiles",
@@ -138,31 +142,21 @@
   },
   "prettier.requireConfig": true,
   "redhat.telemetry.enabled": false,
-  "javascript.format.semicolons": "insert",
-  "javascript.preferGoToSourceDefinition": true,
-  "javascript.referencesCodeLens.enabled": true,
-  "javascript.referencesCodeLens.showOnAllFunctions": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "literals",
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.format.semicolons": "insert",
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "literals",
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.suggest.completeFunctionCalls": true,
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.implementationsCodeLens.enabled": true,
-  "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
-  "typescript.preferGoToSourceDefinition": true,
-  "typescript.referencesCodeLens.enabled": true,
-  "typescript.referencesCodeLens.showOnAllFunctions": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.format.semicolons": "insert",
+  "js/ts.preferGoToSourceDefinition": true,
+  "js/ts.referencesCodeLens.enabled": true,
+  "js/ts.referencesCodeLens.showOnAllFunctions": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.inlayHints.variableTypes.enabled": true,
+  "js/ts.inlayHints.parameterTypes.enabled": true,
+  "js/ts.inlayHints.parameterNames.enabled": "literals",
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.suggest.completeFunctionCalls": true,
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.implementationsCodeLens.enabled": true,
+  "js/ts.implementationsCodeLens.showOnInterfaceMethods": true,
   "template-string-converter.convertOutermostQuotes": true,
-  "vitest.maximumConfigs": 10,
   "javascriptBooster.logLevel": "error",
   "importCost.fontStyle": "oblique",
   "importCost.largePackageDarkColor": "#92433D",
@@ -171,10 +165,6 @@
   "importCost.smallPackageLightColor": "#307435",
   "importCost.mediumPackageDarkColor": "#A56E1A",
   "importCost.mediumPackageLightColor": "#A56E1A",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.nextEditSuggestions.fixes": true,
-  "chat.editing.confirmEditRequestRetry": false,
-  "chat.commandCenter.enabled": false,
   "cSpell.userWords": [
     "cloudsmith",
     "devcontainers",
@@ -197,6 +187,10 @@
     "css",
     "postcss",
     "scss"
+  ],
+  "auto-close-tag.insertSpaceBeforeSelfClosingTag": true,
+  "auto-close-tag.disableOnLanguage": [
+    "typescript"
   ],
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "enabled"
@@ -227,9 +221,12 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "chat.editing.confirmEditRequestRetry": false,
+  "chat.agentsControl.enabled": false,
+  "chat.mcp.gallery.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
   "github.copilot.chat.githubMcpServer.readonly": true,
   "github.copilot.chat.githubMcpServer.lockdown": true,
   "github.copilot.chat.githubMcpServer.enabled": true,
-  "chat.agentsControl.enabled": false,
-  "chat.mcp.gallery.enabled": true
 }
