@@ -1,4 +1,4 @@
-for f in "${HOME}/.zsh_completions/*"; do
+for f in "${HOME}/.zsh_completions/"*; do
   [[ -r "$f" ]] && source "$f"
 done
 

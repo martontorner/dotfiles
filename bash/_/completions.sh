@@ -1,4 +1,4 @@
-for f in "${HOME}/.bash_completions/*"; do
+for f in "${HOME}/.bash_completions/"*; do
   [[ -r "$f" ]] && source "$f"
 done
 
