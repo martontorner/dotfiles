@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-brew bundle install
+brew bundle --file "${DOTFILES}/brew/Brewfile"
