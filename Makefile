@@ -12,11 +12,14 @@ bootstrap:  ## Install/upgrade dotfiles.
 
 brew: ## Install/upgrade Homebrew packages.
 	@brew bundle --file brew/Brewfile
+	@brew bundle --file fonts/Brewfile
+	@brew bundle --file vscode/Brewfile
 
 vscode-export-extensions:  ## Export VS Code extensions.
-	@code --list-extensions | sort > vscode/extensions.txt
+# 	@code --list-extensions | sort > vscode/extensions.txt
 	@brew bundle dump --vscode --file vscode/Brewfile --force
 
 vscode-import-extensions:  ## Import VS Code extensions.
-	@xargs -n 1 code --install-extension < vscode/extensions.txt
-# 	@brew bundle --vscode --file vscode/Brewfile
+# 	@xargs -n 1 code --install-extension < vscode/extensions.txt
+	@brew bundle --vscode --file vscode/Brewfile
+	@code --install-extension vscode/angular-cli-schematics-0.0.1.vsix
