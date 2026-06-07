@@ -36,6 +36,7 @@
   "editor.bracketPairColorization.enabled": false,
   "editor.scrollBeyondLastLine": false,
   "editor.foldingImportsByDefault": true,
+  "editor.linkedEditing": true,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
