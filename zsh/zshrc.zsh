@@ -17,6 +17,10 @@ setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 
+setopt autocd                 # cd into command if it is a directory
+setopt nobeep                 # disable beep on error
+setopt numeric_glob_sort      # sort glob results numerically
+
 # Path
 _source_if_exists "${HOME}/.path"
 

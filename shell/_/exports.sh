@@ -34,6 +34,7 @@ export BAT_THEME="base16"
 
 # Node
 export NVM_DIR="${HOME}/.nvm"
+export NODE_USE_SYSTEM_CA=1
 
 # Python
 export PYENV_ROOT="${HOME}/.pyenv"
