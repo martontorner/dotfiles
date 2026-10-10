@@ -237,5 +237,6 @@
   "github.copilot.chat.githubMcpServer.readonly": true,
   "github.copilot.chat.githubMcpServer.lockdown": true,
   "github.copilot.chat.githubMcpServer.enabled": true,
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.hideOnboarding": true
 }
