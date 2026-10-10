@@ -18,10 +18,11 @@
   },
   "workbench.navigationControl.enabled": false,
   "workbench.panel.showLabels": false,
+  "workbench.browser.showInTitleBar": false,
   "workbench.editor.enablePreview": false,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editor.empty.hint": "hidden",
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontSize": 12,
   "editor.inlayHints.fontFamily": "BlinkMacSystemFont, Segoe UI",
   "editor.inlayHints.fontSize": 11,
@@ -41,6 +42,9 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "editor.rulers": [
     {
       "column": 80,
@@ -106,7 +110,7 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     ".gitconfig": ".gitignore, .gitmessage, .gitattributes",
-    ".editorconfig": ".*.yaml, *.config.js, *.config.cjs, *.config.mjs, *.config.ts",
+    ".editorconfig": ".*.yaml, .*.json, *.config.json, *.config.js, *.config.cjs, *.config.mjs, *.config.ts",
     ".env": "*.env, env.*",
     "*.ts": "${capture}.js, ${capture}.spec.ts",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -181,18 +185,21 @@
   ],
   "stylelint.snippet": [
     "css",
+    "scss",
     "postcss",
-    "scss"
+    "tailwindcss"
   ],
   "stylelint.validate": [
     "css",
+    "scss",
     "postcss",
-    "scss"
+    "tailwindcss"
   ],
   "auto-close-tag.insertSpaceBeforeSelfClosingTag": true,
   "auto-close-tag.disableOnLanguage": [
     "typescript"
   ],
+  "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "enabled"
   },
@@ -214,8 +221,7 @@
     "editor.autoIndent": "advanced",
     "editor.quickSuggestions": {
       "other": true,
-      "comments": false,
-      "strings": true
+      "comments": false
     },
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
@@ -224,10 +230,12 @@
   },
   "chat.editing.confirmEditRequestRetry": false,
   "chat.agentsControl.enabled": false,
+  "chat.titleBar.openInAgentsWindow.enabled": false,
   "chat.mcp.gallery.enabled": true,
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.nextEditSuggestions.fixes": true,
   "github.copilot.chat.githubMcpServer.readonly": true,
   "github.copilot.chat.githubMcpServer.lockdown": true,
   "github.copilot.chat.githubMcpServer.enabled": true,
+  "claudeCode.preferredLocation": "panel"
 }
