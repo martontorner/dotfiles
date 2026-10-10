@@ -101,53 +101,36 @@ Precision is counted from seconds (so 9 means nanosecond precision).
   fi
 }
 
-# Generate a random password
+# Generate a random password (32 alphanumeric characters)
 function random_password_generator() {
-  if [ -z "$1" ]; then
+  if [ $# -gt 1 ]; then
     echo "random_password_generator: Create a random password
 
-Usage: random_password_generator <length> [<use_special_characters = 0>]
+Usage: random_password_generator [<length = 32>]
 "
 
     return;
   fi
 
-  length=$1
-  use_special_characters=${2:-0}
-
-  if [ $use_special_characters -eq 1 ]; then
-    CHARS=( \
-      a b c d e f g h i j k l m n o p q r s t u v w x y z \
-      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \
-      0 1 2 3 4 5 6 7 8 9 \
-      \; \: \. \~ \! \@ \# \$ \% \^ \& \* - + = \? \
-    )
-  else
-    CHARS=( \
-      a b c d e f g h i j k l m n o p q r s t u v w x y z \
-      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \
-      0 1 2 3 4 5 6 7 8 9 \
-    )
-  fi
-
-  CNUM="${#CHARS[@]}"
-
-  result=""
-
-  let POSCNT=0;
-  while [ 1 -eq 1 ]; do
-    if [ $POSCNT -ge $length ]; then
-      break;
-    fi
-
-    result="${result}${CHARS[${RANDOM}%${CNUM}]}"
-
-    let POSCNT=$POSCNT+1
-  done
-
-  echo "${result}"
+  # random password generator (32 alphanumeric characters)
+  cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c "${1:-32}" | paste
 }
 alias rpwdgen='random_password_generator'
+
+# Generate an apple-like password (16 lowercase, 1 uppercase, 1 digit, randomized, hyphenated)
+function apple_password_generator() {
+  if [ $# -gt 0 ]; then
+    echo "apple_password_generator: Create an apple-like password
+
+Usage: apple_password_generator
+"
+
+    return;
+  fi
+
+  { shuf -e {a..z} | head -16; shuf -e {A..Z} | head -1; shuf -e {0..9} | head -1; } | shuf | paste -sd '' | fold -w6 | paste -sd '-'
+}
+alias apwdgen='apple_password_generator'
 
 # Enter a docker container shell
 function docker_exec_shell() {
