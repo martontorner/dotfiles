@@ -28,16 +28,16 @@ brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
 tap 'anchore/grype', trusted: {
-  formula:  "grype",
+  formula:  "anchore/grype/grype",
 }
 brew 'anchore/grype/grype'
 
 tap 'anchore/syft', trusted: {
-  formula:  "syft",
+  formula:  "anchore/syft/syft",
 }
 brew 'anchore/syft/syft'
 
 tap 'derailed/k9s', trusted: {
-  formula:  "k9s",
+  formula:  "derailed/k9s/k9s",
 }
 brew 'derailed/k9s/k9s'
